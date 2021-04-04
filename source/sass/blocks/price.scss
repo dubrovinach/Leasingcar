@@ -1,0 +1,38 @@
+.price {
+    padding-top: 100px;
+    padding-bottom: 134px;
+}
+
+.price h2 {
+    margin: 0;
+    padding-bottom: 32px;
+    font-size: 54px;
+    font-weight: 900;
+    line-height: 48px;
+    width: 50%;
+}
+
+@media (max-width: $tablet-width) {
+    .price {
+        padding-top: 83px;
+    }
+
+    .price h2 {
+        width: 65%;
+        padding-bottom: 42px;
+    }
+}
+
+@media (max-width: $mini-tablet-width) {
+    .price h2 {
+        width: 85%;
+    }
+}
+
+@media (max-width: $mobile-width) {
+    .price h2 {
+        font-size: 34px;
+        line-height: 31px;
+    }
+
+}

@@ -1,0 +1,23 @@
+.toggles {
+    width: 133px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggles__button {
+    padding: 0;
+    width: 6px;
+    height: 6px;
+    border: 1px solid $white;
+    border-radius: 50%;
+    background-color: $white;
+    opacity: 40%;
+
+    &--active {
+        width: 12px;
+        height: 12px;
+        opacity: 100%;
+    }
+}
