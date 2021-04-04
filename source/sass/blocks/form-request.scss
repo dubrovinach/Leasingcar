@@ -1,0 +1,31 @@
+.form-request__fieldset {
+    padding: 0;
+    padding-bottom: 32px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: none;
+    margin: 0;
+
+}
+
+.form-request__submit {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid $filter-grey;
+    border-radius: 16px;
+    padding-top: 29px;
+    padding-bottom: 29px;
+    padding-left: 33px;
+    padding-right: 23px;
+}
+
+.form-request__submit p {
+    width: 59%;
+    margin: 0;
+    font-family: $fontFamily-Gilroy;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+
+}

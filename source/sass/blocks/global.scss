@@ -1,0 +1,117 @@
+.container {
+    max-width: 1344px;
+    margin: 0 auto;
+}
+
+.head-container {
+    max-width: 1344px;
+    margin: 0 auto;
+}
+
+.global-button {
+    min-width: 174px;
+    min-height: 48px;
+    text-decoration: none;
+    border: 1px solid $orange;
+    border-radius: 40px;
+    background-color: $orange;
+    color: $white;
+    font-family: $fontFamily-Gilroy;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+
+    &:hover {
+        background-color: $black;
+        border-color: $black;
+    }
+
+    &:active {
+        background-color: rgba(87, 87, 87, 1);
+        border-color: rgba(87, 87, 87, 1);
+    }
+}
+
+@media (max-width: $tablet-width) {
+    .container {
+        max-width: 928px;
+    }
+
+    .head-container {
+        max-width: 928px;
+    }
+}
+
+@media (max-width: $mini-tablet-width) {
+    .container {
+        max-width: 91%;
+    }
+
+    .head-container {
+        max-width: 91%;
+    }
+
+    .hamburger {
+        padding: 0;
+        width: 50px;
+        height: 24px;
+        border: none;
+        background: transparent;
+    }
+
+    .main-nav--closed .hamburger::before {
+        content: "";
+        position: absolute;
+        top: 30px;
+        right: 0;
+        width: 21px;
+        height: 3px;
+        background-color: $black;
+        box-shadow: 0 10px 0 0 $black, 0 20px 0 0 $black;
+    }
+
+    .main-nav--opened .hamburger::before {
+        content: "";
+        position: absolute;
+        top: 27px;
+        right: 7px;
+        width: 19px;
+        height: 3px;
+        background-color: $black;
+        transform: rotate(45deg);
+    }
+
+    .main-nav--opened .hamburger::after {
+        content: "";
+        position: absolute;
+        top: 27px;
+        right: 9px;
+        width: 19px;
+        height: 3px;
+        background-color: $black;
+        transform: rotate(-46deg);
+    }
+}
+
+@media (max-width: $mobile-width) {
+    .container {
+        max-width: 280px;
+    }
+
+    .head-container {
+        max-width: 100%;
+    }
+
+    .main-nav--closed .hamburger::before {
+        background-color: $white;
+        box-shadow: 0 10px 0 0 $white, 0 20px 0 0 $white;
+    }
+
+    .main-nav--opened .hamburger::before {
+        background-color: $white;
+    }
+
+    .main-nav--opened .hamburger::after {
+        background-color: $white;
+    }
+}

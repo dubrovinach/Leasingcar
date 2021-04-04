@@ -1,0 +1,87 @@
+.price-form__calculation {
+    border: none;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 53px;
+}
+
+.price-form__result {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.price-form__result div {
+    padding-right: 13.3%;
+}
+
+.price-form__result div p {
+    margin: 0;
+    font-family: $fontFamily-Gilroy;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: $text-grey;
+    padding-bottom: 13px;
+}
+
+.price-form__result div span {
+    font-size: 54px;
+    font-weight: 900;
+    line-height: 48px;
+    color: $text-grey;
+}
+
+.price-form__button {
+    min-width: 426px;
+    min-height: 68px;
+    font-family: $fontFamily-Nekst;
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 900;
+    margin-left: 3.8%;
+}
+
+@media (max-width: $tablet-width) {
+    .price-form__result {
+        padding-bottom: 44px;
+        flex-wrap: wrap;
+    }
+
+    .price-form__result div {
+        padding-right: 21.6%;
+        padding-bottom: 41px;
+    }
+
+    .price-form__button {
+        min-width: 345px;
+        margin: 0;
+    }
+
+    .price-form__calculation {
+        padding-bottom: 8px;
+    }
+}
+
+@media (max-width: $tablet-width) {
+    .price-form__result div {
+        padding-right: 12%;
+    }
+}
+
+
+@media (max-width: $mobile-width) {
+    .price-form__result {
+        flex-direction: column;
+    }
+
+    .price-form__result div p {
+        font-size: 14px;
+        line-height: 19px;
+    }
+
+    .price-form__result div span {
+        font-size: 22px;
+        line-height: 20px;
+    }
+}

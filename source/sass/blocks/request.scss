@@ -1,0 +1,28 @@
+.request {
+    padding: 160px 393px 170px 392px;
+    background-color: $white;
+    position: absolute;
+    top: 210px;
+    left: 0;
+    width: 100%;
+    border-top-right-radius: 32px;
+    border-top-left-radius: 32px;
+}
+
+.request h2 {
+    margin: 0;
+    font-size: 54px;
+    font-weight: 900;
+    line-height: 48px;
+}
+
+.request__desc {
+    padding-top: 24px;
+    padding-bottom: 44px;
+    width: 65%;
+    margin: 0;
+    font-family: $fontFamily-Gilroy;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}

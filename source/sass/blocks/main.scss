@@ -1,0 +1,27 @@
+body {
+    font-family: $fontFamily-Nekst;
+    background-color: $white;
+    margin: 0 auto;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
