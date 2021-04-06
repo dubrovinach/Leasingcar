@@ -1,10 +1,14 @@
 .container {
-    max-width: 1344px;
+    max-width: 93.4%;
     margin: 0 auto;
 }
 
+header {
+    min-height: 91px;
+}
+
 .head-container {
-    max-width: 1344px;
+    max-width: 93.4%;
     margin: 0 auto;
 }
 
@@ -34,11 +38,15 @@
 
 @media (max-width: $tablet-width) {
     .container {
-        max-width: 928px;
+        max-width: 90.5%;
     }
 
     .head-container {
-        max-width: 928px;
+        max-width: 90.5%;
+    }
+
+    header {
+        min-height: 93px;
     }
 }
 
@@ -47,35 +55,57 @@
         max-width: 91%;
     }
 
+    header {
+        min-height: 80px;
+    }
+
     .head-container {
         max-width: 91%;
     }
 
     .hamburger {
         padding: 0;
-        width: 50px;
-        height: 24px;
+        width: 25px;
+        height: 50px;
         border: none;
         background: transparent;
+        position: relative;
     }
 
     .main-nav--closed .hamburger::before {
         content: "";
         position: absolute;
-        top: 30px;
-        right: 0;
-        width: 21px;
-        height: 3px;
+        top: 16px;
+        left: 0;
+        width: 22px;
+        height: 2px;
         background-color: $black;
-        box-shadow: 0 10px 0 0 $black, 0 20px 0 0 $black;
+        box-shadow: 0 8px 0 0 $black;
+    }
+
+    .main-nav--closed .hamburger::after {
+        content: "";
+        position: absolute;
+        top: 32px;
+        left: 0;
+        width: 22px;
+        height: 2px;
+        background-color: $black;
+        width: 17px;
+    }
+
+    .main-nav--opened .hamburger {
+        position: absolute;
+        top: 12px;
+        right: 30px;
     }
 
     .main-nav--opened .hamburger::before {
         content: "";
         position: absolute;
         top: 27px;
-        right: 7px;
-        width: 19px;
+        right: 8px;
+        width: 21px;
         height: 3px;
         background-color: $black;
         transform: rotate(45deg);
@@ -86,7 +116,7 @@
         position: absolute;
         top: 27px;
         right: 9px;
-        width: 19px;
+        width: 21px;
         height: 3px;
         background-color: $black;
         transform: rotate(-46deg);
@@ -95,23 +125,29 @@
 
 @media (max-width: $mobile-width) {
     .container {
-        max-width: 280px;
+        max-width: 88%;
     }
 
     .head-container {
         max-width: 100%;
     }
 
+    .hamburger {
+        width: 22px;
+    }
+
     .main-nav--closed .hamburger::before {
         background-color: $white;
-        box-shadow: 0 10px 0 0 $white, 0 20px 0 0 $white;
+        box-shadow: 0 8px 0 0 $white;
+        top: 18px;
     }
 
-    .main-nav--opened .hamburger::before {
+    .main-nav--closed .hamburger::after {
         background-color: $white;
+        top: 34px;
     }
 
-    .main-nav--opened .hamburger::after {
-        background-color: $white;
+    .main-nav--opened .hamburger {
+        right: 9px;
     }
 }
