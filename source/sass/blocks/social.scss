@@ -1,14 +1,14 @@
 .social {
     display: flex;
-    justify-content: center;
-    padding-top: 40px;
+    padding-top: 33px;
+    padding-left: 41.2%;
 }
 
 .social ul {
     margin: 0;
     padding: 0;
     list-style: none;
-    width: 16%;
+    min-width: 29%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -27,5 +27,27 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 10px;
+    top: 13px;
+}
+
+@media (max-width: $mini-tablet-width) {
+    .social {
+        padding-left: 39%;
+    }
+
+    .social ul {
+        min-width: 26%;
+    }
+
+}
+
+@media (max-width: $mobile-width) {
+    .social {
+        padding-left: 29%;
+        padding-top: 23px;
+    }
+
+    .social ul {
+        min-width: 54%;
+    }
 }

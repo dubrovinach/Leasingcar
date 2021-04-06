@@ -1,21 +1,25 @@
 .custom-input {
+    width: 48%;
+
     &--phone {
         position: relative;
     }
 }
 
 .custom-input__input {
-    padding-top: 12px;
+    padding-top: 9px;
     padding-bottom: 12px;
     padding-left: 24px;
-    min-width: 250px;
+    width: 100%;
     background-color: $filter-grey;
     border: 1px solid $filter-grey;
     border-radius: 16px;
+    font-size: 16px;
+    line-height: 24px;
 
     &--phone {
-        padding-top: 24px;
-        padding-bottom: 8px;
+        padding-top: 17px;
+        padding-bottom: 4px;
     }
 }
 
@@ -28,4 +32,11 @@
     font-size: 12px;
     font-weight: 400;
     line-height: 12px;
+}
+
+@media (max-width: $mobile-width) {
+    .custom-input {
+        width: 96%;
+        padding-bottom: 10px;
+    }
 }

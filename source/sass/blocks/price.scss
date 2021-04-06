@@ -30,9 +30,15 @@
 }
 
 @media (max-width: $mobile-width) {
+    .price {
+        padding-top: 65px;
+    }
+
     .price h2 {
         font-size: 34px;
         line-height: 31px;
+        width: 80%;
+        padding-bottom: 31px;
     }
 
 }

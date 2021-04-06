@@ -15,7 +15,7 @@
     padding-right: 13.3%;
 }
 
-.price-form__result div p {
+.price-form__desc {
     margin: 0;
     font-family: $fontFamily-Gilroy;
     font-size: 16px;
@@ -42,6 +42,12 @@
     margin-left: 3.8%;
 }
 
+.price-form__payment {
+    &--mobile {
+        display: none;
+    }
+}
+
 @media (max-width: $tablet-width) {
     .price-form__result {
         padding-bottom: 44px;
@@ -63,7 +69,7 @@
     }
 }
 
-@media (max-width: $tablet-width) {
+@media (max-width: $mini-tablet-width) {
     .price-form__result div {
         padding-right: 12%;
     }
@@ -73,15 +79,42 @@
 @media (max-width: $mobile-width) {
     .price-form__result {
         flex-direction: column;
+        align-items: flex-start;
     }
 
-    .price-form__result div p {
+    .price-form__desc {
+        padding-bottom: 3px;
         font-size: 14px;
         line-height: 19px;
+    }
+
+    .price-form__result div {
+        padding-bottom: 27px;
     }
 
     .price-form__result div span {
         font-size: 22px;
         line-height: 20px;
+    }
+
+    .price-form__calculation {
+        padding-bottom: 1px;
+    }
+
+    .price-form__button {
+        min-width: 281px;
+        min-height: 62px;
+        font-size: 22px;
+        line-height: 20px;
+    }
+
+    .price-form__payment {
+        &--desktop {
+            display: none;
+        }
+
+        &--mobile {
+            display: block;
+        }
     }
 }

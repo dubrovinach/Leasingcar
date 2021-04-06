@@ -14,18 +14,51 @@
     flex-direction: row;
     border: 2px solid $filter-grey;
     border-radius: 16px;
-    padding-top: 29px;
-    padding-bottom: 29px;
-    padding-left: 33px;
-    padding-right: 23px;
+    padding-top: 28px;
+    padding-bottom: 19px;
+    padding-left: 31px;
+    padding-right: 20px;
 }
 
 .form-request__submit p {
-    width: 59%;
     margin: 0;
+    margin-right: 17%;
+    width: 59%;
     font-family: $fontFamily-Gilroy;
     font-size: 14px;
     line-height: 21px;
     font-weight: 400;
+    color: rgba(17, 17, 17, 0.5);
+}
 
+.form-request__submit p a {
+    text-decoration: none;
+    color: $black;
+}
+
+@media (max-width: $mobile-width) {
+    .form-request__fieldset {
+        flex-direction: column;
+        padding-bottom: 0;
+    }
+
+    .form-request__submit {
+        flex-direction: column-reverse;
+        border: none;
+        padding: 0;
+        width: 96%;
+    }
+
+    .form-request__button {
+        width: auto;
+    }
+
+    .form-request__submit p {
+        line-height: 19px;
+        margin: 0;
+        padding-top: 16px;
+        padding-left: 10px;
+        width: 96%;
+        text-align: center;
+    }
 }

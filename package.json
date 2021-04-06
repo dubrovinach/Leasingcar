@@ -51,6 +51,8 @@
   },
   "dependencies": {
     "del": "^4.1.1",
-    "imagemin": "^7.0.1"
+    "gulp-uglify": "^3.0.2",
+    "imagemin": "^7.0.1",
+    "nouislider": "^14.7.0"
   }
 }
