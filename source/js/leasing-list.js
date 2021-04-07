@@ -5,6 +5,9 @@
     let list = document.querySelector('.main-nav__leasing');
 
     link.onmouseover = function () {
-        list.classList.remove('visually-hidden')
+        list.style.display = 'block';
+    }
+    link.onmouseout = function () {
+        list.style.display = 'none';
     }
 })();

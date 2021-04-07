@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     position: relative;
+    padding-right: 36%;
 }
 
 .logo span {
@@ -28,6 +29,10 @@
 }
 
 @media (max-width: $tablet-width) {
+    .logo {
+        padding-right: 11%;
+    }
+
     .logo__img {
         &--desktop {
             width: 166px;
@@ -47,6 +52,10 @@
 }
 
 @media (max-width: $mini-tablet-width) {
+    .logo {
+        padding-right: 0;
+    }
+
     .logo span {
         padding-left: 30px;
 
