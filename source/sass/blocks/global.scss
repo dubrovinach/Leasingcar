@@ -36,6 +36,16 @@ header {
     }
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
 @media (max-width: $tablet-width) {
     .container {
         max-width: 90.5%;

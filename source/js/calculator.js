@@ -1,65 +1,97 @@
 'use strict';
-(function () {
-    const priceSlider = document.querySelector('#filter-price');
-    const percentSlider = document.querySelector('#filter-percent');
-    const termSlider = document.querySelector('#filter-term');
-    const inputPrice = document.querySelector('#price');
-    const inputPercent = document.querySelector('#percent');
-    const inputTerm = document.querySelector('#leasing');
-    const monthlyPaymentElement = document.querySelector('#monthly-payment');
-    const leasingPriceElement = document.querySelector('#leasing-price');
 
-    const STEP_OF_PRICE = 50000;
-    const INITIAL_PRICE = 1000000;
-    const STEP_OF_PERCENT = 0.5;
-    const INITIAL_PERCENT = 10;
-    const STEP_OF_TERM = 0.59;
-    const INITIAL_TERM = 1;
+const priceInput = document.querySelector('#price');
+const priceRange = document.querySelector('#filter-price');
 
-    let price = inputPrice.value;
-    let percentPrice = inputPercent.value;
-    let term = inputTerm.value;
-    let initialPayment = 0;
-    let leasePrice = leasingPriceElement.innerText;
-    let monthlyPayment = monthlyPaymentElement.innerText;
+const percentInput = document.querySelector('#percent');
+const percentRange = document.querySelector('#filter-percent');
+const percentOutput = document.querySelector('#percent-ouput')
 
-    function monthlyPaymentCalculation() {
-        monthlyPayment = price - initialPayment * (percentPrice / (1 + percentPrice) - term - 1);
-    }
+// Срок лизинга
+const leasingInput = document.querySelector('#leasing');
+const leasingRange = document.querySelector('#filter-leasing');
 
-    function leaseAmountCalculation() {
-        leaseAmount = initialPayment + term * monthlyPayment;
-    }
+// Сумма договора лизинга
+const leasingPriceElement = document.querySelector('#leasing-price');
+// Ежемесячный платеж
+const monthlyPaymentElement = document.querySelector('#monthly-payment');
 
-    function initialPaymentCalculation() {
-        initialPayment = percentPrice * price;
-    }
+const STEP_OF_PRICE = 50000;
+const INITIAL_PRICE = 1000000;
 
-    function moveSlider(evt, value, initial, step) {
-        const sliderValue = evt.target.value;
-        value = sliderValue;
-        const backgroundPercent = Math.round((sliderValue - initial) / step);
-        const color = `linear-gradient(90deg, rgba(255, 149, 20, 1) ${backgroundPercent}%, rgba(225, 225, 225, 1) ${backgroundPercent}%)`;
+const STEP_OF_PERCENT = 0.5;
+const INITIAL_PERCENT = 10;
 
-        evt.target.style.background = color;
-    }
+const STEP_OF_LEASING = 0.59;
+const INITIAL_LEASING = 1;
 
-    function movePriceSlider(evt) {
-        moveSlider(evt, price, INITIAL_PRICE, STEP_OF_PRICE);
-        inputPrice.value = priceSlider.value;
-    }
+// Цена
+let price = Number(priceRange.value);
+// Первоначальный взнос
+let initialPayment = Number(percentInput.value);
+// Первоначальный взнос в %
+let percentPrice = Number(percentRange.value);
+// Срок лизинга
+let leasing = Number(leasingRange.value);
+// Сумма договора лизинга
+let leasingPrice = Number(leasingPriceElement.innerHTML);
+// Ежемесячный платеж
+let monthlyPayment = Number(monthlyPaymentElement.innerHTML);
 
-    function moveTermSlider(evt) {
-        moveSlider(evt, term, INITIAL_TERM, STEP_OF_TERM);
-        inputTerm.value = termSlider.value;
-    }
+// “Первоначальный взнос”
+function initialPaymentCalculation() {
+    initialPayment = Math.round((percentPrice / 100) * price);
+    percentInput.value = initialPayment;
+}
 
-    function movePercentSlider(evt) {
-        moveSlider(evt, percentPrice, INITIAL_PERCENT, STEP_OF_PERCENT);
-        inputPercent.value = percentSlider.value;
-    }
+function leaseAmountCalculation() {
+    leasingPrice = Math.round(initialPayment + leasing * monthlyPayment);
+    leasingPriceElement.innerHTML = leasingPrice;
+}
 
-    priceSlider.addEventListener('change', movePriceSlider);
-    percentSlider.addEventListener('change', movePercentSlider);
-    termSlider.addEventListener('change', moveTermSlider);
-})();
+// Стоимость автомобиля - Первоначальный взнос*(Процентная ставка/(1+Процентная ставка)-Срок кредита-1)
+// Нигде не задаётся процентная ставка
+// Есть только первоначальный взнос в %, а ставки нет
+function monthlyPaymentCalculation() {
+    monthlyPayment = Math.round(price - initialPayment * (percentPrice / (1 + percentPrice) - leasing - 1));
+    monthlyPaymentElement.innerHTML = monthlyPayment;
+}
+
+function moveSlider(target, initial, step) {
+    const backgroundPercent = Math.round((target.value - initial) / step);
+    const color = `linear-gradient(90deg, rgba(255, 149, 20, 1) ${backgroundPercent}%, rgba(225, 225, 225, 1) ${backgroundPercent}%)`;
+
+    target.style.background = color;
+    initialPaymentCalculation();
+    leaseAmountCalculation();
+    monthlyPaymentCalculation();
+}
+
+function movePriceSlider(evt) {
+    const target = evt.target;
+    priceInput.value = target.value;
+    price = target.value;
+    moveSlider(target, INITIAL_PRICE, STEP_OF_PRICE);
+}
+
+function moveLeasingSlider(evt) {
+    const target = evt.target;
+    leasingInput.value = target.value;
+    leasing = target.value;
+    moveSlider(target, INITIAL_LEASING, STEP_OF_LEASING);
+}
+
+function movePercentSlider(evt) {
+    const target = evt.target;
+    percentOutput.innerHTML = target.value;
+    percentPrice = target.value;
+    moveSlider(target, INITIAL_PERCENT, STEP_OF_PERCENT);
+}
+
+initialPaymentCalculation();
+leaseAmountCalculation();
+monthlyPaymentCalculation();
+
+priceRange.addEventListener('change', movePriceSlider);
+percentRange.addEventListener('change', movePercentSlider);
+leasingRange.addEventListener('change', moveLeasingSlider);
