@@ -54,8 +54,8 @@
     }
 
     .price-form__result div {
-        padding-right: 21.6%;
         padding-bottom: 41px;
+        width: 50%;
     }
 
     .price-form__button {
@@ -65,12 +65,6 @@
 
     .price-form__calculation {
         padding-bottom: 8px;
-    }
-}
-
-@media (max-width: $mini-tablet-width) {
-    .price-form__result div {
-        padding-right: 12%;
     }
 }
 
@@ -89,6 +83,7 @@
 
     .price-form__result div {
         padding-bottom: 27px;
+        width: auto;
     }
 
     .price-form__result div span {
