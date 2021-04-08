@@ -677,17 +677,13 @@ input[type=number] {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
   .price-form__result div {
-    padding-right: 21.6%;
-    padding-bottom: 41px; }
+    padding-bottom: 41px;
+    width: 50%; }
   .price-form__button {
     min-width: 345px;
     margin: 0; }
   .price-form__calculation {
     padding-bottom: 8px; } }
-
-@media (max-width: 1023px) {
-  .price-form__result div {
-    padding-right: 12%; } }
 
 @media (max-width: 767px) {
   .price-form__result {
@@ -703,7 +699,8 @@ input[type=number] {
     font-size: 14px;
     line-height: 19px; }
   .price-form__result div {
-    padding-bottom: 27px; }
+    padding-bottom: 27px;
+    width: auto; }
   .price-form__result div span {
     font-size: 22px;
     line-height: 20px; }
