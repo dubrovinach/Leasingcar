@@ -125,24 +125,29 @@
                                 <label for="price" class="filter__label filter__label--mobile">Желаемая сумма
                                     кредита</label>
                                 <div class="filter__wrapper">
-                                    <input class="filter__input" type="text" name="price" id="price"
-                                        placeholder="3 300 000">
+                                    <input class="filter__input" type="number" name="price" id="price" min="1000000"
+                                        max="6000000" placeholder="3 300 000">
                                     <span class="filter__clarification">₽</span>
                                     <input type="range" class="filter__scale filter__scale--price" id="filter-price"
-                                        min="1000000" max="6000000" value="3300000" step="50000">
+                                        min="1000000" max="6000000" value="1000000">
                                 </div>
                             </li>
                             <li class="filter__item">
                                 <label for="percent">Первоначальный взнос</label>
                                 <div class="filter__wrapper">
-                                    <input class="filter__input" type="text" name="percent" id="percent"
-                                        placeholder="420 000 ₽">
+                                    <input class="filter__input" type="number" name="percent" id="percent"
+                                        placeholder="420 000 ₽" min="10" max="60">
                                     <span
-                                        class="filter__clarification filter__clarification--percent filter__clarification-percent filter__clarification-percent--desktop">13%</span>
+                                        class="filter__clarification filter__clarification--percent filter__clarification-percent filter__clarification-percent--desktop">
+                                        <span id="percent-ouput">
+                                            13
+                                        </span>
+                                        %
+                                    </span>
                                     <span
                                         class="filter__clarification filter__clarification--percent filter__clarification-percent filter__clarification-percent--mobile">10%</span>
                                     <input type="range" class="filter__scale filter__scale--percent" id="filter-percent"
-                                        min="10" max="60" value="4200000" step="0.5">
+                                        min="10" max="60" value="50">
                                 </div>
                             </li>
                             <li class="filter__item">
@@ -151,8 +156,8 @@
                                     <input class="filter__input" type="text" name="leasing" id="leasing"
                                         placeholder="60">
                                     <span class="filter__clarification">мес.</span>
-                                    <input type="range" class="filter__scale filter__scale--leasing" id="filter-term"
-                                        min="1" max="60" value="60" step="1">
+                                    <input type="range" class="filter__scale filter__scale--leasing" id="filter-leasing"
+                                        min="1" max="60" value="50">
                                 </div>
                             </li>
                         </ul>
@@ -165,10 +170,10 @@
                         <div>
                             <p class="price-form__desc">Ежемесячный платеж от</p>
                             <span class="price-form__payment price-form__payment--desktop"><span
-                                    id="monthly-payment">114 455</span>₽</span>
+                                    id="monthly-payment">114455</span>₽</span>
                             <span class="price-form__payment price-form__payment--mobile">16 000 ₽</span>
                         </div>
-                        <button type="submit" class="price-form__button global-button">Оставить заявку</button>
+                        <button type="button" class="price-form__button global-button">Оставить заявку</button>
                     </div>
                 </form>
             </section>
@@ -182,9 +187,7 @@
                     <div class="custom-input custom-input--phone">
                         <label for="phone" class="custom-input__label">Телефон *</label>
                         <input class="custom-input__input custom-input__input--phone" type="tel" name="phone" id="phone"
-                            placeholder="+7 (921) 123 45 67"
-                            pattern="^\+7(\s+)?\(?(17|25|29|33|44)\)?(\s+)?[0-9]{3}-?[0-9]{2}-?[0-9]{2}$"
-                            autofocus="autofocus" required>
+                            placeholder="+7 (921) 123 45 67" required>
                     </div>
                     <div class="custom-input">
                         <label for="name" class="custom-input__label visually-hidden">Имя:</label>
@@ -227,7 +230,7 @@
     <script src="js/slider.js"></script>
     <script src="js/form.js"></script>
     <script src="js/calculator.js"></script>
-    <script src="js/input-mask.js"></script>
+
 
 </body>
 
