@@ -53,14 +53,17 @@ function moveSlider(evt, value, initial, step) {
 
 function movePriceSlider(evt) {
     moveSlider(evt, price, INITIAL_PRICE, STEP_OF_PRICE);
+    inputPrice.value = priceSlider.value;
 }
 
 function moveTermSlider(evt) {
     moveSlider(evt, term, INITIAL_TERM, STEP_OF_TERM);
+    inputTerm.value = termSlider.value;
 }
 
 function movePercentSlider(evt) {
     moveSlider(evt, percentPrice, INITIAL_PERCENT, STEP_OF_PERCENT);
+    inputPercent.value = percentSlider.value;
 }
 
 priceSlider.addEventListener('change', movePriceSlider);
